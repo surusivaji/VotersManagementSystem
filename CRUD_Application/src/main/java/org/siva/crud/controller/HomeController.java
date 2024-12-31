@@ -70,8 +70,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping("removeVoter/{id}")
-	public String removeVoter(@PathVariable("id") int id) {
+	public String removeVoter(@PathVariable("id") int id, HttpSession session) {
 		voterService.removeVoter(id);
+		session.setAttribute("successMsg", "voter removed successfully");
 		return "redirect:/";
 	}
 
