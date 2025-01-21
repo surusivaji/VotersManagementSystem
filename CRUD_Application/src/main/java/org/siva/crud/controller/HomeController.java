@@ -31,6 +31,7 @@ public class HomeController {
 		Voter save = voterService.addVoter(voter);
 		System.out.println(save);
 		if (save!=null) {
+			System.out.println(save);
 			session.setAttribute("successMsg", "Voter added successfully");
 			return "redirect:/";
 		}
