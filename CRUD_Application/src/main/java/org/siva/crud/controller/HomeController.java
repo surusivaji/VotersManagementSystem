@@ -46,6 +46,7 @@ public class HomeController {
 	public String getVoterInformation(HttpSession session, @PathVariable("id") int id) {
 		Voter voter = voterService.getVoterById(id);
 		if (voter!=null) {
+			System.out.println(voter);
 			List<Voter> voters = (List<Voter>) session.getAttribute("voters");
 			session.setAttribute("voters", voters);
 			session.setAttribute("voter", voter);
